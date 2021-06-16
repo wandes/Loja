@@ -8,9 +8,9 @@ import lombok.Getter;
 @Data
 @Getter
 public class CompraDTO {
-	
+
 	private List<ItemDaCompraDTO> itens;
-	
+
 	private EnderecoDTO endereco;
-	
+
 }

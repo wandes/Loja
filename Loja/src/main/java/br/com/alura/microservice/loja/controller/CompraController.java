@@ -1,14 +1,13 @@
 package br.com.alura.microservice.loja.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.alura.microservice.loja.controller.dto.CompraDTO;
+import br.com.alura.microservice.loja.model.Compra;
 import br.com.alura.microservice.loja.service.CompraService;
 
 @RestController
@@ -19,10 +18,9 @@ public class CompraController {
 	private CompraService compraService;
 
 	@RequestMapping(method = RequestMethod.POST)
-	public ResponseEntity<String> realizaCompra(@RequestBody CompraDTO compra) {
-		compraService.realizaCompra(compra);
+	public Compra realizaCompra(@RequestBody CompraDTO compra) {
 
-		return ResponseEntity.status(HttpStatus.OK).body("");
+		return compraService.realizaCompra(compra);
 
 	}
 }

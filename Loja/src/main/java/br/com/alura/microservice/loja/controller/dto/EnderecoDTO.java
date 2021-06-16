@@ -10,4 +10,10 @@ public class EnderecoDTO {
 	private int numero;
 	
 	private String estado;
+
+	@Override
+	public String toString() {
+		return "[rua=" + rua + ", numero=" + numero + ", estado=" + estado + "]";
+	}
+	
 }
